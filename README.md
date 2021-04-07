@@ -1,18 +1,18 @@
-#Trade store application
+# Trade store application
 
 This is trade store application providing API to store and get all trades from trade store. It also has cron scheduler which run everyday midnight to check for expired trades and update their status to expired in trade store
 
-##Install
+## Install
 
 `mvn clean install`    
 
-##Run the app
+## Run the app
    
 `java -jar target/tradestore-0.0.1-SNAPSHOT.jar` 
 
-##REST API
+## REST API
 
-####Store trade
+#### Store trade
 
 Request    
 POST <mark>/trade</mark>
@@ -37,7 +37,7 @@ Response Body
 
 `{"tradeId":"T1","version":1,"counterPartyId":"CP1","bookId":"B1","maturityDate":"2021-04-07","createdDate":"2021-04-07","expired":"N"}`
 
-####Get all trades     
+#### Get all trades     
 
 GET <mark>/trades</mark>
 

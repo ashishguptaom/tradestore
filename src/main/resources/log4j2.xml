@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config" status="trace" shutdownHook="disable">
+   <Appenders>
+      <RollingRandomAccessFile  name="FileAppender" fileName="tradestore.log" filePattern="tradestore.log.%d{yyyy-MM-dd.HH}.gz">
+         <PatternLayout>
+            <Pattern>%d %-5p %-9t %X{reqId} %m%n</Pattern>
+         </PatternLayout>
+         <Policies>
+            <TimeBasedTriggeringPolicy interval="1"/>
+         </Policies>
+      </RollingRandomAccessFile>
+   </Appenders>
+   <Loggers>
+      <Logger name="com.dobi.tradestore" level="debug" additivity="false">
+         <AppenderRef ref="FileAppender"/>
+      </Logger>
+      <Root level="warn">
+         <AppenderRef ref="FileAppender" />
+      </Root>
+   </Loggers>
+</Configuration>
